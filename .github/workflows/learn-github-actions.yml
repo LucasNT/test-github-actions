@@ -5,9 +5,11 @@ on:
   pull_request_target:
     types:
       - closed
+      - opened
   pull_request:
     types:
       - closed
+      - opened
 jobs:
   check-bats-version:
     runs-on: ubuntu-latest
