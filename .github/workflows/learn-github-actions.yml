@@ -12,6 +12,7 @@ jobs:
     outputs:
       bats_version: ${{ steps.bat_version.outputs.test }}
     steps:
+      - uses: actions/checkout@v3
       - id: informations
         run: |
           echo $GITHUB_REF
