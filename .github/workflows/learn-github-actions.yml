@@ -2,10 +2,9 @@
 name: learn-github-actions
 run-name: ${{ github.actor }} is learning GitHub Actions
 on:
-  pull_request:
-    types:
-      - closed
-      - opened
+  push:
+    branches:
+      - main
 jobs:
   check-bats-version:
     runs-on: ubuntu-latest
@@ -16,6 +15,4 @@ jobs:
       - id: informations
         run: |
           echo $GITHUB_REF
-          echo $GITHUB_SHA
-          echo ${{github.base_ref}}
-          echo ${{github.head_ref}}
+          git name-rev --name-only $GITHUB_SHA
