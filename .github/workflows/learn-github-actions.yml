@@ -2,10 +2,6 @@
 name: learn-github-actions
 run-name: ${{ github.actor }} is learning GitHub Actions
 on:
-  pull_request_target:
-    types:
-      - closed
-      - opened
   pull_request:
     types:
       - closed
@@ -21,3 +17,5 @@ jobs:
         run: |
           echo $GITHUB_REF
           echo $GITHUB_SHA
+          echo ${{github.base_ref}}
+          echo ${{github.head_ref}}
