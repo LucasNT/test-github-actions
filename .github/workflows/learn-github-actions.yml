@@ -2,7 +2,7 @@
 name: learn-github-actions
 run-name: ${{ github.actor }} is learning GitHub Actions
 on:
-  pull_request_target::
+  pull_request_target:
     types:
       - closed
   pull_request:
